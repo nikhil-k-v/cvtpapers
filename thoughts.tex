@@ -19,7 +19,6 @@
 \newcommand{\todo}[1]{\textcolor{red}{#1}}
 \definecolor{mylightblue}{RGB}{123,146,210} % This is an example RGB for light blue
 
-
 \begin{document}
 
 \title{CVT: Thoughts and a Proposed Design}
@@ -40,6 +39,7 @@ The mechanical power of some rotating thing is given by the following equation:
 
 You can think of $\tau$ (torque) and $\omega$ (speed) as the length and width of a rectangle, the rectangle would have an area of $P_{m}$. 
 
+% Figure 1: Rectangular representation of mechanical power.
 \begin{figure}[H]
   \centering
   \begin{tikzpicture}[scale=0.7]
@@ -64,6 +64,7 @@ You can think of $\tau$ (torque) and $\omega$ (speed) as the length and width of
 
 If we fixed $P_{m}$, there would be an infinite number of rectangles with this area, and thus there are an infinite number of $\tau:\omega$ ratios for any $P_{m}$. Each of these rectangles is representative of one single gear ratio. 
 
+% Figure 2: Various examples of rectangles with the same area Pm.
 \begin{figure}[H]
   \centering
   \resizebox{0.7\textwidth}{!}{%
@@ -117,15 +118,12 @@ If we fixed $P_{m}$, there would be an infinite number of rectangles with this a
   \caption{Various examples of rectangles with the same area $P_{m}$.}\label{fig:side_rects}
 \end{figure}
 
-Lets say there's a constant torque-speed combination given by our motor (our input, which we have to manipulate for our needs), given by the case where the rectangle is a square (generally the case for a motor's maximum power output, which we will discuss later). This is the middle rectangle, $R_{3}$, in Figure 2, which has a $\tau:\omega$ ratio of $1:1$, direct drive! There is no gear reduction yet. 
-
-$R_{1}$, which has a $\tau:\omega$ ratio of $9:1$, would represent a $1:3$ reduction, we are tripling the torque, but our output speed is $\frac{1}{3}$ of the input.
-
 Layering these rectangles gives us a crude approximation of a curve, where each $\omega$ (x-axis) has a corresponding $\tau$ (y-axis):
 
+% Figure 3: Crude approximation of optimal power graph with 5 rectangles.
 \begin{figure}[H]
   \centering
-  \begin{tikzpicture}[scale=0.7] % The scale can be adjusted for sizing
+  \begin{tikzpicture}[scale=0.6] % The scale can be adjusted for sizing
     % Define the consistent area for the rectangles
     \pgfmathsetmacro{\area}{9} % The area of each rectangle
     
@@ -177,11 +175,14 @@ Depending on the torque requirements, you could choose between discrete reductio
 
 If we had a bike transmission with an infinite amount of these sprockets, we wouldn't have to choose between a handfull of discrete, sub-optimal reduction ratios. Instead, we could just choose the exact ratio for our requirements. This is the idea for a CVT. Specifically extending the bicycle example, we would end up with something like the V-Belt CVTs we currently use in some cars. 
 
+\subsection{\texorpdfstring{Optimal Torque-Speed Curve w/ Fixed $P_{m}$}{PDFstring}}
+
 We can bring this CVT idea back to the torque-speed graph by adding more and more rectangles (approaching infinity), giving us a continuous curve. This type of curve is aptly named: it is a rectangular hyperbola.
 
+% Figure 4: Optimal torque-speed curve with a constant
 \begin{figure}[H]
   \centering
-  \begin{tikzpicture}[scale=2]
+  \begin{tikzpicture}[scale=1.6]
     % Define the area under the curve and the coordinates for the rectangle
     \pgfmathsetmacro{\a}{1.5}
     \pgfmathsetmacro{\b}{1/\a}
@@ -219,16 +220,20 @@ Remember that $P_{m}$ is a constant.
 
 \subsection{Torque-Speed Curve of a Motor}
 
+\subsubsection{Basic Torque-Speed Graph}
+
 One thing that can help our intution for this curve is looking at the torque-speed curve of a motor.
 
+% Figure 5: Torque-speed curve of a motor from Adi Mehrotra’s Dynos for Dummies
 \begin{figure}[H]
   \centering
-  \includegraphics[width=0.8\textwidth]{motor-torque-speed.png}
+  \includegraphics[width=0.75\textwidth]{motor-torque-speed.png}
   \caption{Torque-speed curve of a motor from Adi Mehrotra's Dynos for Dummies}\label{fig:dynos_for_dummies}
 \end{figure}
 
 This curve is a simple linear function, connecting the y-intercept (peak torque $\tau_{p}$ or $\tau_{\max}$) to the x-intercept (maximum speed $\omega_{\max}$). 
 
+% Figure 6: Rectangular hyperbola and motor torque-speed curve.
 \begin{figure}[H]
   \centering
   \begin{tikzpicture}[scale=2.35]
@@ -274,5 +279,31 @@ This curve is a simple linear function, connecting the y-intercept (peak torque 
 \end{figure}
 
 If you compare this to the rectangular hyperbola, we see that there is one point where they intersect, which is also the point of maximum power output for a motor.
+
+\subsubsection{Motor Efficiency Graphs and CVT Use-Cases}
+For the obvious use-case for CVT, where we want to use the maximum amount of power while the torque demands are varying (different terrains, driving uphill vs. downhill, etc.), we would always run our input at the speed at the intersection point, and then the transmission would vary the output speed depending on the exact torque demand.
+
+However, what if we are driving on these different terrains, and there is a speed limit? Or a traffic light? In this case, we are not trying to maximize speed or power, we are trying to conserve energy, and almost never get to use $P_{\max}$ in the first place. It is an energy-efficiency optimization.
+
+Energy efficiency is defined as the ratio of mechanical power output to electrical power input. This means that we want to maximize $\mu_{m}$:
+\begin{equation}
+  \mu_{m} = \frac{P_{m}}{P_{e}}
+\end{equation}
+
+Usually, energy efficiency for a motor drops off significantly at lower speeds, while it increases at higher speeds. 
+
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=0.75\textwidth]{motor-efficiency.png}
+  \caption{The torque/speed/efficiency map for the U10 from Elijah Stanger-Jones’ masters thesis. (Found in Adi Mehrotra's Dynos for Dummies)}\label{fig:motor_efficiency}
+\end{figure}
+
+Thus, in the case of a vehicle forced to drive at low speeds, it would be beneficial to run the motor at a higher speed, and choose a reduction ratio that significantly decreases speed. Because we are already running our motor at a high speed, we have to be using $< P_{\max}$, and thus we would be using less energy.
+
+There is an unfortunate issue related to this: it only goes one way. We can set our motor to run at a high speed, and choose to gear it down, maintaining high energy efficiency and low power at low speeds. 
+
+If we set our motor at a low speed and geared it up, we could not expect high energy efficiency at high speeds, so we would benefit by simply running our motor at a higher speed and gearing closer to a 1:1 reduction. Thankfully, running our motor at those high speeds is already more efficient, so we are not losing much.
+
+\section{CVT Design}
 
 \end{document}

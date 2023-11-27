@@ -1,6 +1,6 @@
 # Fdb version 4
-["pdflatex"] 1700996673 "c:/Users/Nikhil/cvtpapers/thoughts.tex" "thoughts.pdf" "thoughts" 1700996675 0
-  "c:/Users/Nikhil/cvtpapers/thoughts.tex" 1700996672 12692 7d74882a8eb73480f6d609f16df57904 ""
+["pdflatex"] 1701071704 "c:/Users/Nikhil/cvtpapers/thoughts.tex" "thoughts.pdf" "thoughts" 1701071707 0
+  "c:/Users/Nikhil/cvtpapers/thoughts.tex" 1701071701 14863 7a73f0ac1ad96df4ee1c14947cbf0378 ""
   "c:/texlive/2023/texmf-dist/fonts/map/fontname/texfonts.map" 1681769124 3524 cb3e574dea2d1052e39280babc910dc8 ""
   "c:/texlive/2023/texmf-dist/fonts/tfm/public/amsfonts/cmextra/cmex7.tfm" 1681767777 1004 54797486969f23fa377b128694d548df ""
   "c:/texlive/2023/texmf-dist/fonts/tfm/public/amsfonts/cmextra/cmex8.tfm" 1681767777 988 bdf658c3bfc2d96d3c8b02cfc1c94c20 ""
@@ -24,6 +24,7 @@
   "c:/texlive/2023/texmf-dist/fonts/tfm/public/cm/cmsy8.tfm" 1681768380 1120 8b7d695260f3cff42e636090a8002094 ""
   "c:/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb" 1681767777 34811 78b52f49e893bcba91bd7581cdc144c0 ""
   "c:/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb" 1681767777 32080 340ef9bf63678554ee606688e7b5339d ""
+  "c:/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb" 1681767777 36299 5f9df58c2139e7edcf37c8fca4bd384d ""
   "c:/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi12.pfb" 1681767777 36741 0ee9e374ec3e30da87cdfb0ea3575226 ""
   "c:/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi8.pfb" 1681767777 35469 dcf3a5f2fc1862f5952e3ee5eb1d98c4 ""
   "c:/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb" 1681767777 35752 024fb6c41858982481f6968b5fc26508 ""
@@ -165,10 +166,11 @@
   "c:/texlive/2023/texmf-var/fonts/map/pdftex/updmap/pdftex.map" 1681772176 4683147 9a6f76ba1d2531f688b92e219d43aae8 ""
   "c:/texlive/2023/texmf-var/web2c/pdftex/pdflatex.fmt" 1681772296 7885513 b2bf5c976608b88b802761da25be0586 ""
   "c:/texlive/2023/texmf.cnf" 1681772154 713 e69b156964470283e0530f5060668171 ""
+  "motor-efficiency.png" 1701070620 469225 0ad7a3b5eaff96d0ec56f9209bff1cc3 ""
   "motor-torque-speed.png" 1700774594 52999 75e9fcb6fbb3a97abc929a758986a65e ""
-  "thoughts.aux" 1700996675 2824 834b338dec984f850b675db8beb05246 "pdflatex"
-  "thoughts.out" 1700996675 506 2b44f964ca5917a4c4ed11a19ad41871 "pdflatex"
-  "thoughts.tex" 1700996672 12692 7d74882a8eb73480f6d609f16df57904 ""
+  "thoughts.aux" 1701071707 3839 5fb59e644839ec4afe513e89251e2d51 "pdflatex"
+  "thoughts.out" 1701071707 1184 4b91582960c7127dba22d670c682c6e7 "pdflatex"
+  "thoughts.tex" 1701071701 14863 7a73f0ac1ad96df4ee1c14947cbf0378 ""
   (generated)
   "thoughts.aux"
   "thoughts.log"
