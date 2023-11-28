@@ -1,6 +1,6 @@
 # Fdb version 4
-["pdflatex"] 1701134829 "c:/Users/Nikhil/cvtpapers/thoughts.tex" "thoughts.pdf" "thoughts" 1701134831 0
-  "c:/Users/Nikhil/cvtpapers/thoughts.tex" 1701134815 14836 2bbd33cb7b12a279fd8ef977fcab0c71 ""
+["pdflatex"] 1701171320 "c:/Users/Nikhil/cvtpapers/thoughts.tex" "thoughts.pdf" "thoughts" 1701171322 0
+  "c:/Users/Nikhil/cvtpapers/thoughts.tex" 1701171319 16760 274a770ef02193c71628cacd394abbd2 ""
   "c:/texlive/2023/texmf-dist/fonts/map/fontname/texfonts.map" 1681769124 3524 cb3e574dea2d1052e39280babc910dc8 ""
   "c:/texlive/2023/texmf-dist/fonts/tfm/public/amsfonts/cmextra/cmex7.tfm" 1681767777 1004 54797486969f23fa377b128694d548df ""
   "c:/texlive/2023/texmf-dist/fonts/tfm/public/amsfonts/cmextra/cmex8.tfm" 1681767777 988 bdf658c3bfc2d96d3c8b02cfc1c94c20 ""
@@ -52,8 +52,12 @@
   "c:/texlive/2023/texmf-dist/tex/generic/pgf/basiclayer/pgfcoretransformations.code.tex" 1681770600 22012 81b34a0aa8fa1a6158cc6220b00e4f10 ""
   "c:/texlive/2023/texmf-dist/tex/generic/pgf/basiclayer/pgfcoretransparency.code.tex" 1681770600 8893 e851de2175338fdf7c17f3e091d94618 ""
   "c:/texlive/2023/texmf-dist/tex/generic/pgf/frontendlayer/tikz/libraries/tikzlibrarycalc.code.tex" 1681770600 15929 463535aa2c4268fead6674a75c0e8266 ""
+  "c:/texlive/2023/texmf-dist/tex/generic/pgf/frontendlayer/tikz/libraries/tikzlibrarypatterns.code.tex" 1681770600 770 82e332cc9cc48e06b8070d74393a185a ""
+  "c:/texlive/2023/texmf-dist/tex/generic/pgf/frontendlayer/tikz/libraries/tikzlibrarypatterns.meta.code.tex" 1681770600 3036 674fecad0a872f955e3a17a315c67783 ""
   "c:/texlive/2023/texmf-dist/tex/generic/pgf/frontendlayer/tikz/libraries/tikzlibrarytopaths.code.tex" 1681770600 11518 738408f795261b70ce8dd47459171309 ""
   "c:/texlive/2023/texmf-dist/tex/generic/pgf/frontendlayer/tikz/tikz.code.tex" 1681770600 186782 af500404a9edec4d362912fe762ded92 ""
+  "c:/texlive/2023/texmf-dist/tex/generic/pgf/libraries/pgflibrarypatterns.code.tex" 1681770601 7936 49e55444d57eb69a380c6baa35094828 ""
+  "c:/texlive/2023/texmf-dist/tex/generic/pgf/libraries/pgflibrarypatterns.meta.code.tex" 1681770601 15474 b617114c75a45c2061a2d249f54a2d3e ""
   "c:/texlive/2023/texmf-dist/tex/generic/pgf/libraries/pgflibraryplothandlers.code.tex" 1681770601 32995 ac577023e12c0e4bd8aa420b2e852d1a ""
   "c:/texlive/2023/texmf-dist/tex/generic/pgf/math/pgfint.code.tex" 1681770601 3063 8c415c68a0f3394e45cfeca0b65f6ee6 ""
   "c:/texlive/2023/texmf-dist/tex/generic/pgf/math/pgfmath.code.tex" 1681770601 949 cea70942e7b7eddabfb3186befada2e6 ""
@@ -139,8 +143,8 @@
   "c:/texlive/2023/texmf.cnf" 1681772154 713 e69b156964470283e0530f5060668171 ""
   "motor-efficiency.png" 1701070620 469225 0ad7a3b5eaff96d0ec56f9209bff1cc3 ""
   "motor-torque-speed.png" 1700774594 52999 75e9fcb6fbb3a97abc929a758986a65e ""
-  "thoughts.aux" 1701134831 2438 a6f73aef29e08a3be49f75b54d13b8c8 "pdflatex"
-  "thoughts.tex" 1701134815 14836 2bbd33cb7b12a279fd8ef977fcab0c71 ""
+  "thoughts.aux" 1701171322 2740 c3d0559b1caa4c1c5c699098f8579e1c "pdflatex"
+  "thoughts.tex" 1701171319 16760 274a770ef02193c71628cacd394abbd2 ""
   (generated)
   "thoughts.aux"
   "thoughts.log"

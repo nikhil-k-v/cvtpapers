@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023) (preloaded format=pdflatex 2023.4.17)  27 NOV 2023 20:27
+This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023) (preloaded format=pdflatex 2023.4.17)  28 NOV 2023 06:35
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -405,7 +405,11 @@ File: pgfmodulematrix.code.tex 2023-01-15 v3.1.10 (3.1.10)
 File: tikzlibrarytopaths.code.tex 2023-01-15 v3.1.10 (3.1.10)
 ))) (c:/texlive/2023/texmf-dist/tex/generic/pgf/frontendlayer/tikz/libraries/tikzlibrarycalc.code.tex
 File: tikzlibrarycalc.code.tex 2023-01-15 v3.1.10 (3.1.10)
-) (c:/texlive/2023/texmf-dist/tex/latex/l3backend/l3backend-pdftex.def
+) (c:/texlive/2023/texmf-dist/tex/generic/pgf/frontendlayer/tikz/libraries/tikzlibrarypatterns.code.tex
+File: tikzlibrarypatterns.code.tex 2023-01-15 v3.1.10 (3.1.10)
+ (c:/texlive/2023/texmf-dist/tex/generic/pgf/libraries/pgflibrarypatterns.code.tex
+File: pgflibrarypatterns.code.tex 2023-01-15 v3.1.10 (3.1.10)
+)) (c:/texlive/2023/texmf-dist/tex/generic/pgf/frontendlayer/tikz/libraries/tikzlibrarypatterns.meta.code.tex (c:/texlive/2023/texmf-dist/tex/generic/pgf/libraries/pgflibrarypatterns.meta.code.tex)) (c:/texlive/2023/texmf-dist/tex/latex/l3backend/l3backend-pdftex.def
 File: l3backend-pdftex.def 2023-03-30 L3 backend support: PDF output (pdfTeX)
 \l__color_backend_stack_int=\count313
 \l__pdf_internal_box=\box69
@@ -471,20 +475,20 @@ File: motor-efficiency.png Graphic file (type png)
 <use motor-efficiency.png>
 Package pdftex.def Info: motor-efficiency.png  used on input line 296.
 (pdftex.def)             Requested size: 352.31625pt x 293.90971pt.
- [4] [5 <./motor-efficiency.png>] (./thoughts.aux) ) 
+ [4] [5 <./motor-efficiency.png>] [6] (./thoughts.aux) ) 
 Here is how much of TeX's memory you used:
- 17010 strings out of 476017
- 330552 string characters out of 5793766
+ 17284 strings out of 476017
+ 338737 string characters out of 5793766
  1863660 words of memory out of 5000000
- 37199 multiletter control sequences out of 15000+600000
+ 37461 multiletter control sequences out of 15000+600000
  521658 words of font info for 68 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 84i,10n,89p,561b,749s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ 84i,10n,89p,592b,747s stack positions out of 10000i,1000n,20000p,200000b,200000s
 <c:/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb><c:/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb><c:/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb><c:/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi12.pfb><c:/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi8.pfb><c:/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb><c:/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb><c:/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmr17.pfb><c:/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb><c:/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb>
-Output written on thoughts.pdf (5 pages, 575354 bytes).
+Output written on thoughts.pdf (6 pages, 579124 bytes).
 PDF statistics:
- 78 PDF objects out of 1000 (max. 8388607)
- 46 compressed objects within 1 object stream
+ 81 PDF objects out of 1000 (max. 8388607)
+ 48 compressed objects within 1 object stream
  0 named destinations out of 1000 (max. 500000)
  23 words of extra memory for PDF output out of 10000 (max. 10000000)
 

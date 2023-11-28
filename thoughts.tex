@@ -13,7 +13,7 @@
 \usepackage{multirow}
 \usepackage{rotating}
 \usepackage{tikz}
-\usetikzlibrary{calc}
+\usetikzlibrary{calc, patterns, patterns.meta}
 
 \newcommand{\todo}[1]{\textcolor{red}{#1}}
 \definecolor{mylightblue}{RGB}{123,146,210} % This is an example RGB for light blue
@@ -66,7 +66,7 @@ If we fixed $P_{m}$ to be some constant, there would be an infinite number of re
 % Figure 2: Various examples of rectangles with the same area Pm.
 \begin{figure}[H]
   \centering
-  \resizebox{0.7\textwidth}{!}{%
+  \resizebox{0.75\textwidth}{!}{%
   \begin{tikzpicture}
     % Define the consistent area for the rectangles
     \pgfmathsetmacro{\area}{9} % The area of each rectangle
@@ -284,7 +284,7 @@ For the obvious use-case for CVT, where we want to use the maximum amount of pow
 
 However, what if we are driving on these different terrains, and there is a speed limit? Or a traffic light? In this case, we are not trying to maximize speed or power, we are trying to conserve energy, and almost never get to use $P_{\max}$ in the first place. It is an energy-efficiency optimization.
 
-Energy efficiency is defined as the ratio of mechanical power output to electrical power input. This means that we want to maximize $\mu_{m}$:
+Energy efficiency $\mu_{m}$ is defined as the ratio of mechanical power output to electrical power input. This means that we want to maximize $\mu_{m}$:
 \begin{equation}
   \mu_{m} = \frac{P_{m}}{P_{e}}
 \end{equation}
@@ -299,10 +299,53 @@ Usually, energy efficiency for a motor drops off significantly at lower speeds, 
 
 Thus, in the case of a vehicle forced to drive at low speeds, it would be beneficial to run the motor at a higher speed, and choose a reduction ratio that significantly decreases speed. Because we are already running our motor at a high speed, we have to be using $< P_{\max}$, and thus we would be using less energy.
 
-There is an unfortunate issue related to this: it only goes one way. We can set our motor to run at a high speed, and choose to gear it down, maintaining high energy efficiency and low power at low speeds. 
-
-If we set our motor at a low speed and geared it up, we could not expect high energy efficiency at high speeds, so we would benefit by simply running our motor at a higher speed and gearing closer to a 1:1 reduction. Thankfully, running our motor at those high speeds is already more efficient, so we are not losing much.
+There is an unfortunate issue related to this: it only goes one way. We can set our motor to run at a high speed, and choose to gear it down, maintaining high energy efficiency and low power at low speeds. But, if we set our motor at a low speed and geared it up, we could not expect high energy efficiency at high speeds, so we would benefit by simply running our motor at a higher speed and gearing closer to a 1:1 reduction. Thankfully, running our motor at those high speeds is already more efficient, so we are not losing much.
 
 \section{CVT Design}
+
+\subsection{Constraints}
+
+Going back to the bike chain and sprocket example, I earlier explained that we could ``have an infinite number of sprockets'', and that would yield a CVT. That is actually not true. What I really meant was an infinite amount of sprockets \textbf{between} two discrete sizes, the largest and a smallest. 
+
+We want the curve to be the continous on a closed interval $[\omega_{1},\omega_{2}]$, where $\omega_{1}$ is the minimum expected operating speed, and $\omega_{2}$ is the maximum extended operating speed. 
+
+\begin{figure}[H]
+  \centering
+  \begin{tikzpicture}[scale=1.6]
+    % Define maximum values for torque (Tmax) and omega (ωmax)
+    \pgfmathsetmacro{\Tmax}{2}
+    \pgfmathsetmacro{\Omax}{2}
+    
+    % Define the point of maximum power Pmax
+    \pgfmathsetmacro{\Pmax}{1} % Assumed for this example, adjust as needed
+  
+    % Draw the axes
+    \draw[->] (0,0) -- (3,0) node[below] {$\omega$};
+    \draw[->] (0,0) -- (0,3) node[left] {$\tau$};
+    
+    % Draw the optimal torque-speed curve (hyperbolic)
+    \draw[domain=0.33:3, black] plot (\x,{1/\x});
+    
+    % Shade the area under the motor's torque-speed curve
+    \fill[mylightblue, fill opacity=0.2] (0,0) -- (0,3) -- (0.33,3) -- plot[domain=0.33:3] (\x,{1/\x}) -- (3,0) -- cycle;
+
+    \fill[mylightblue, fill opacity=0.3] (0.8,0) -- plot[domain=0.8:2] (\x,{1/\x}) -- (2,0) -- cycle;
+    
+    % Draw dashed lines to the axes
+    \draw[dashed] (0.8,0)  -- (0.8,1.25);
+    \draw[dashed] (2,0) -- (2,0.5);
+
+    \fill[black] (0.8,1.25) circle (1pt);
+    \fill[black] (2,0.5) circle (1pt);
+  
+    \fill[black] (0.8,0) circle (1pt) node[below] {$\omega_{a}$};
+    \fill[black] (2,0) circle (1pt) node[below] {$\omega_{b}$};
+  
+  \end{tikzpicture}
+  
+  \caption{Important section of the rectangular hyperbola.}\label{fig:omega_constraints}
+\end{figure}
+
+
 
 \end{document}

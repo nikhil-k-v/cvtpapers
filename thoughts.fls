@@ -531,6 +531,14 @@ INPUT c:/texlive/2023/texmf-dist/tex/generic/pgf/frontendlayer/tikz/libraries/ti
 INPUT c:/texlive/2023/texmf-dist/tex/generic/pgf/frontendlayer/tikz/libraries/tikzlibrarytopaths.code.tex
 INPUT c:/texlive/2023/texmf-dist/tex/generic/pgf/frontendlayer/tikz/libraries/tikzlibrarycalc.code.tex
 INPUT c:/texlive/2023/texmf-dist/tex/generic/pgf/frontendlayer/tikz/libraries/tikzlibrarycalc.code.tex
+INPUT c:/texlive/2023/texmf-dist/tex/generic/pgf/frontendlayer/tikz/libraries/tikzlibrarypatterns.code.tex
+INPUT c:/texlive/2023/texmf-dist/tex/generic/pgf/frontendlayer/tikz/libraries/tikzlibrarypatterns.code.tex
+INPUT c:/texlive/2023/texmf-dist/tex/generic/pgf/libraries/pgflibrarypatterns.code.tex
+INPUT c:/texlive/2023/texmf-dist/tex/generic/pgf/libraries/pgflibrarypatterns.code.tex
+INPUT c:/texlive/2023/texmf-dist/tex/generic/pgf/frontendlayer/tikz/libraries/tikzlibrarypatterns.meta.code.tex
+INPUT c:/texlive/2023/texmf-dist/tex/generic/pgf/frontendlayer/tikz/libraries/tikzlibrarypatterns.meta.code.tex
+INPUT c:/texlive/2023/texmf-dist/tex/generic/pgf/libraries/pgflibrarypatterns.meta.code.tex
+INPUT c:/texlive/2023/texmf-dist/tex/generic/pgf/libraries/pgflibrarypatterns.meta.code.tex
 INPUT c:/texlive/2023/texmf-dist/tex/latex/l3backend/l3backend-pdftex.def
 INPUT c:/texlive/2023/texmf-dist/tex/latex/l3backend/l3backend-pdftex.def
 INPUT c:/texlive/2023/texmf-dist/tex/latex/l3backend/l3backend-pdftex.def
