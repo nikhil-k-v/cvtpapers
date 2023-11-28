@@ -4,7 +4,6 @@
 \usepackage{fullpage}
 \usepackage{setspace}
 \usepackage{graphicx}
-\usepackage{hyperref}
 \usepackage{natbib}
 \usepackage{color}
 \usepackage{listings}
@@ -34,7 +33,7 @@
 \subsection{Mechanical Power}
 The mechanical power of some rotating thing is given by the following equation:
 \begin{equation}
-  P_{m} = \tau*\omega
+  P_{m} = \tau\cdot\omega
 \end{equation}
 
 You can think of $\tau$ (torque) and $\omega$ (speed) as the length and width of a rectangle, the rectangle would have an area of $P_{m}$. 
@@ -62,7 +61,7 @@ You can think of $\tau$ (torque) and $\omega$ (speed) as the length and width of
   \caption{Rectangular representation of mechanical power.}\label{fig:power_rectangle}
 \end{figure}
 
-If we fixed $P_{m}$, there would be an infinite number of rectangles with this area, and thus there are an infinite number of $\tau:\omega$ ratios for any $P_{m}$. Each of these rectangles is representative of one single gear ratio. 
+If we fixed $P_{m}$ to be some constant, there would be an infinite number of rectangles with that area, and thus there are an infinite number of $\tau:\omega$ ratios for any $P_{m}$. Each of these rectangles is representative of one single gear ratio. 
 
 % Figure 2: Various examples of rectangles with the same area Pm.
 \begin{figure}[H]
@@ -175,7 +174,7 @@ Depending on the torque requirements, you could choose between discrete reductio
 
 If we had a bike transmission with an infinite amount of these sprockets, we wouldn't have to choose between a handfull of discrete, sub-optimal reduction ratios. Instead, we could just choose the exact ratio for our requirements. This is the idea for a CVT. Specifically extending the bicycle example, we would end up with something like the V-Belt CVTs we currently use in some cars. 
 
-\subsection{\texorpdfstring{Optimal Torque-Speed Curve w/ Fixed $P_{m}$}{PDFstring}}
+\subsection{Optimal Torque-Speed Curve w/ Fixed $P_{m}$}
 
 We can bring this CVT idea back to the torque-speed graph by adding more and more rectangles (approaching infinity), giving us a continuous curve. This type of curve is aptly named: it is a rectangular hyperbola.
 
