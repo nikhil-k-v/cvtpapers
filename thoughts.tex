@@ -13,12 +13,21 @@
 \usepackage{multirow}
 \usepackage{rotating}
 \usepackage{tikz}
-\usetikzlibrary{calc, patterns, patterns.meta}
+\usepackage{soul}
+\usepackage{ulem}
+
+% \newcommand\hi[1]{\colorbox{yellow}{\textcolor{black}{#1}}}
 
 \newcommand{\todo}[1]{\textcolor{red}{#1}}
 \definecolor{mylightblue}{RGB}{123,146,210} % This is an example RGB for light blue
 
 \begin{document}
+
+% set the h1 highlight color to light green-blue (set a custom rgb color)
+\definecolor{orange}{RGB}{255,186,150}
+\sethlcolor{orange}
+
+\usetikzlibrary{calc, patterns, patterns.meta}
 
 \title{CVT: Thoughts and a Proposed Design}
 \author{Nikhil Vijay}
@@ -172,7 +181,9 @@ Layering these rectangles gives us a crude approximation of a curve, where each 
 
 Depending on the torque requirements, you could choose between discrete reduction ratios. This is how a conventional bicycle works with its chain and sprocket transmission and manual gear shifter.
 
-If we had a bike transmission with an infinite amount of these sprockets, we wouldn't have to choose between a handfull of discrete, sub-optimal reduction ratios. Instead, we could just choose the exact ratio for our requirements. This is the idea for a CVT. Specifically extending the bicycle example, we would end up with something like the V-Belt CVTs we currently use in some cars. 
+\hl{If we had a bike transmission with an infinite amount of these sprockets, we wouldn't have to choose between a handfull of discrete, sub-optimal reduction ratios. Instead, we could just choose the exact ratio for our requirements. This is the idea for a CVT}.
+
+Specifically extending the bicycle example, we would end up with something like the V-Belt CVTs we currently use in some cars. 
 
 \subsection{Optimal Torque-Speed Curve w/ Fixed $P_{m}$}
 
@@ -284,7 +295,7 @@ For the obvious use-case for CVT, where we want to use the maximum amount of pow
 
 However, what if we are driving on these different terrains, and there is a speed limit? Or a traffic light? In this case, we are not trying to maximize speed or power, we are trying to conserve energy, and almost never get to use $P_{\max}$ in the first place. It is an energy-efficiency optimization.
 
-Energy efficiency $\mu_{m}$ is defined as the ratio of mechanical power output to electrical power input. This means that we want to maximize $\mu_{m}$:
+Energy efficiency, $\mu_{m}$, is defined as the ratio of mechanical power output to electrical power input. This means that we want to maximize $\mu_{m}$:
 \begin{equation}
   \mu_{m} = \frac{P_{m}}{P_{e}}
 \end{equation}
@@ -307,7 +318,7 @@ There is an unfortunate issue related to this: it only goes one way. We can set 
 
 Going back to the bike chain and sprocket example, I earlier explained that we could ``have an infinite number of sprockets'', and that would yield a CVT. That is actually not true. What I really meant was an infinite amount of sprockets \textbf{between} two discrete sizes, the largest and a smallest. 
 
-We want the curve to be the continous on a closed interval $[\omega_{1},\omega_{2}]$, where $\omega_{1}$ is the minimum expected operating speed, and $\omega_{2}$ is the maximum extended operating speed. 
+We want the curve to be the continous on a closed interval $[\omega_{1},\omega_{2}]$, where $\omega_{1}$ is the minimum expected operating speed, and $\omega_{2}$ is the maximum expected operating speed. 
 
 \begin{figure}[H]
   \centering
@@ -346,6 +357,11 @@ We want the curve to be the continous on a closed interval $[\omega_{1},\omega_{
   \caption{Important section of the rectangular hyperbola.}\label{fig:omega_constraints}
 \end{figure}
 
+Of course, we can, and likely will,  operate at speeds both lower and higher than within this interval, but we cannot use this continous curve. Instead, we will multiply the points of peak speed and peak torque by the highest and lowest reduction ratios, respectively. 
 
+Specifically:
+\begin{equation}
+  \omega_{a} = \omega_{1} \cdot R_{\max}
+\end{equation}
 
-\end{document}
+\end{document} 
